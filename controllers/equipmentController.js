@@ -24,7 +24,7 @@ const addEquipment = async (req, res) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ name, type, available }),
+            body: JSON.stringify({ articlenumber, title, description, count, userid }),
         });
 
         if (!response.ok) {
