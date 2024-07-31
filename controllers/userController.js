@@ -9,7 +9,7 @@ const getAllUsers = async (req, res) => {
         const usersList = await response.json();
         
         // User-Listenansicht mit dynamischen Daten rendern
-        res.render('users', { users: usersList });
+        res.render('users', { users: usersList, activePage: 'users' });
     } catch (error) {
         console.error('Fehler beim Abrufen der Nutzer:', error.message);
         res.status(500).send('Fehler beim Abrufen der Nutzer.');
@@ -58,7 +58,7 @@ const getUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
     const { id } = req.params; // ID des zu aktualisierenden Users
-    const { name, type, available } = req.body; // Neue Daten aus dem Anfragekörper
+    const { username, password, email, role } = req.body; // Neue Daten aus dem Anfragekörper
 
     try {
         const response = await fetch(`${BASE_URL}/${id}`, {
@@ -66,7 +66,7 @@ const updateUser = async (req, res) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ name, type, available }),
+            body: JSON.stringify({ username, password, email, role }),
         });
 
         if (!response.ok) {

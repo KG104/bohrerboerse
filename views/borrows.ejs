@@ -2,9 +2,25 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Ausgeliehenes</title>
+    <link  rel="stylesheet" TYPE="text/css" href="/stylesheets/bootstrap.min.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="row">
+            <% borrows.forEach(borrow => { %>
+                <div class="col-lg">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><%=  %></h5>
+                            <p class="card-text"><%=  %></p>
+                            <a href="#" class="btn btn-primary">Ansehen</a>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
 </body>
+<script src="/javascripts/bootstrap.min.js"></script>
 </html>

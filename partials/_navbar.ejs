@@ -1,21 +1,22 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a href="/equipment"> <img src="/images/bohrerboerse.png" alt="Bohrerbörse" style="width:8%"> </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/equipment">Artikel</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="/borrows">Ausgeliehenes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="/users">Benutzer</a>
-          </li>
-        </ul>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="/images/bohrerboerse.png" alt="Logo" width="30" height="30">
+    </a>
+
+    <!-- Toggler/Collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link <%= activePage === 'equipment' ? 'active bg-primary text-white' : '' %>" href="/equipment">Artikel</a>
+        <a class="nav-link <%= activePage === 'borrows' ? 'active bg-primary text-white' : '' %>" href="/borrows">Ausgeliehenes</a>
+        <a class="nav-link <%= activePage === 'users' ? 'active bg-primary text-white' : '' %>" href="/users">Benutzer</a>
       </div>
     </div>
+  </div>
 </nav>

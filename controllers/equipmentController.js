@@ -9,7 +9,7 @@ const getAllEquipment = async  (req, res) => {
         const equipmentList = await response.json();
         
         // Equipment-Listenansicht mit dynamischen Daten rendern
-        res.render('equipment', { equipment: equipmentList });
+        res.render('equipment', { equipment: equipmentList, activePage: 'equipment'  });
     } catch (error) {
         console.error('Fehler beim Abrufen der Ausrüstungsgegenstände:', error.message);
         res.status(500).send('Fehler beim Abrufen der Ausrüstungsgegenstände.');
@@ -60,7 +60,7 @@ const getEquipment = async (req, res) => {
 
 const updateEquipment = async (req, res) => {
     const { id } = req.params; // ID des zu aktualisierenden Equipments
-    const { name, type, available } = req.body; // Neue Daten aus dem Anfragekörper
+    const { articlenumber, title, description, count, userid } = req.body; // Neue Daten aus dem Anfragekörper
 
     try {
         const response = await fetch(`${BASE_URL}/${id}`, {
@@ -68,7 +68,7 @@ const updateEquipment = async (req, res) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ name, type, available }),
+            body: JSON.stringify({ articlenumber, title, description, count, userid }),
         });
 
         if (!response.ok) {
