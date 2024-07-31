@@ -39,6 +39,10 @@ const addUser = async (req, res) => {
     }
 }
 
+const renderUserForm = (req, res) => {
+    res.render('newUser');
+}
+
 const getUser = async (req, res) => {
     const { id } = req.params; // ID des angeforderten Users aus den Parametern abrufen
     try {
@@ -123,5 +127,5 @@ const filterByName = async (req, res) => {
 }
 
 module.exports = {
-    getAllUsers, addUser, getUser, updateUser, deleteUser, filterByName
+    getAllUsers, addUser, getUser, updateUser, deleteUser, filterByName, renderUserForm
 }
