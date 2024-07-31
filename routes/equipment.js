@@ -6,6 +6,9 @@ router.route('/')
     .get(equipmentController.getAllEquipment)
     .post(equipmentController.addEquipment);
 
+    router.route('/newEquipment')
+    .get(equipmentController.renderEquipmentForm);
+
 router.route('/:id')
     .get(equipmentController.getEquipment)
     .put(equipmentController.updateEquipment)

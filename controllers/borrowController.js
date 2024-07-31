@@ -10,7 +10,7 @@ const getAllBorrows = async (req, res) => {
         const borrowList = await response.json();
         
         // Ansicht für ausgeliehene Gegenstände
-        res.render('borrows', { borrows: borrowList });
+        res.render('borrows', { borrows: borrowList, activePage: 'borrows' });
     } catch (error) {
         console.error('Fehler beim Laden der Ausleihen:', error.message);
         res.status(500).send('Fehler beim Laden der Ausleihen.');

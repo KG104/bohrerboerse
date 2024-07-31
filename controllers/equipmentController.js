@@ -39,6 +39,10 @@ const addEquipment = async (req, res) => {
     }
 };
 
+const renderEquipmentForm = (req, res) => {
+    res.render('newEquipment');
+}
+
 
 
 const getEquipment = async (req, res) => {
@@ -127,5 +131,5 @@ const getEditEquipment = async (req, res) => {
 
 
 module.exports = {
-    getAllEquipment, addEquipment, getEquipment, updateEquipment, deleteEquipment
+    getAllEquipment, addEquipment, getEquipment, updateEquipment, deleteEquipment, renderEquipmentForm
 };
