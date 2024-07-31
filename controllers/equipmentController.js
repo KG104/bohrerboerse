@@ -42,6 +42,7 @@ const addEquipment = async (req, res) => {
 
 
 const getEquipment = async (req, res) => {
+    const { id } = req.params;
     try {
         const response = await fetch(`${BASE_URL}/${id}`);
         if (!response.ok) {
@@ -50,6 +51,10 @@ const getEquipment = async (req, res) => {
         const equipmentItem = await response.json();
         
         // Detailansicht für das Equipment rendern und activePage setzen
+        res.render('equipmentDetail', {
+            equipment: equipmentItem,
+            activePage: 'equipment'  // Hier setzen wir activePage
+        });
     } catch (error) {
         console.error('Fehler beim Abrufen des Ausrüstungsgegenstands:', error.message);
         res.status(404).send('Ausrüstungsgegenstand nicht gefunden.');
