@@ -27,7 +27,7 @@
                 <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#editForm" aria-expanded="false" aria-controls="editForm">
                     Bearbeiten
                 </button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#editForm" aria-expanded="false" aria-controls="editForm">
+                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#loanForm" aria-expanded="false" aria-controls="editForm">
                     Ausleihen
                 </button>
                 
@@ -74,14 +74,14 @@
     <div class="collapse" id="loanForm">
         <div class="card card-body">
             <h5>Artikel Ausleihen</h5>
-            <form action="/equipment" method="POST">
+            <form action="/borrows" method="POST">
                 <div class="form-group">
-                    <label for="title">Titel</label>
-                    <input type="text" id="title" name="title" class="form-control" value="<%= equipment.title %>" required>
+                    <label for="title">User ID</label>
+                    <input type="text" id="userid" name="userid" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="articlenumber">Artikelnummer</label>
-                    <input type="text" id="articlenumber" name="articlenumber" class="form-control" value="<%= equipment.articlenumber %>" required>
+                    <label for="articlenumber">Equipment ID</label>
+                    <input type="text" id="equipmentids" name="equipmentids" value="<%= equipment.id %>" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="description">Beschreibung</label>
