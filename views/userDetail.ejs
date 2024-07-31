@@ -2,9 +2,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New User</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+    <title><%= user.username %></title>
 </head>
 <body>
-    
+    <%- include('../partials/_navbar', { activePage: 'equipment' }); %>
+
+    <div class="container mt-5">
+        <h1>Konto von <%= user.username %></h1>
+        
+        <!-- Detailansicht des Artikels -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title"><%= user.username %></h5>
+                <p class="card-text"><strong>Email:</strong> <%= user.email %></p>
+                <p class="card-text"><strong>Rolle:</strong> <%= user.role %></p>
+
+                <a href="/users" class="btn btn-secondary">Zurück zur Übersicht</a>
+                <!-- Bearbeiten Button -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#editForm" aria-expanded="false" aria-controls="editForm">
+                    Bearbeiten
+                </button>
+                
+                <!-- Löschen Formular -->
+                <form action="/users/<%= user.id %>" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-danger">Löschen</button>
+                </form>
+
+        <%- include('../partials/_footer'); %>
+
+        <script src="/javascripts/bootstrap.min.js"></script>
 </body>
 </html>

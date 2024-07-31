@@ -53,7 +53,7 @@ const getUser = async (req, res) => {
         const user = await response.json();
         
         // Einzelansicht für einen User rendern
-        res.render('userDetail', { user : user });
+        res.render('userDetail', { user : user, activePage: 'users' });
     } catch (error) {
         console.error('Fehler beim Abrufen des Users:', error.message);
         res.status(404).send('User nicht gefunden.');
