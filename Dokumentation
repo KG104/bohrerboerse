@@ -1,0 +1,40 @@
+Leo Knittel, Valentin Spiroski und Konstantin Gerlach
+
+# Arbeitsanteile:
+## Leo Knittel:
+ - borrowsController.js
+ - borrows.ejs
+ - newEquipment.ejs
+
+
+## Valentin Sprioski:
+ - equipmentController.js
+ - equipmentDetail.ejs
+ - equipmentEdit.ejs
+
+## Konstantin Gerlach:
+- alle routes
+- usersController.js
+- footer.ejs
+- navbar.ejs
+- searchbar.ejs
+- users.ejs
+- userDetail.ejs
+- newUser.ejs
+- index.ejs
+- error.ejs
+
+
+# Designentscheidung:
+
+Template-Struktur:
+Verwendete Partials navbar.ejs und searchbar.ejs ermöglicht eine Wiederverwendbarkeit und eine sauberes Layout.
+
+Responsive Design:
+Die Navbar verwendet Bootstrap, um sicherzustellen, dass die Seite auf verschiedenen Bildschirmgrößen gut aussieht und funktioniert.
+
+ActivePage:
+Diese Variable wird verwendet, um die aktuell aktive Seite in der Navbar Blau hervorzuheben, was die Navigation für den Benutzer intuitiver macht.
+
+Fehlerbehandlung:
+Eine Errorseite ist vorhanden, um eine bessere Fehlerbehandlung zu gewährleisten.
