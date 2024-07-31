@@ -13,7 +13,8 @@
     <div class="container mt-5">
         <h1>Detailansicht des Artikels</h1>
         
-        <div class="card">
+        <!-- Detailansicht des Artikels -->
+        <div class="card mb-4">
             <div class="card-body">
                 <h5 class="card-title"><%= equipment.title %></h5>
                 <p class="card-text"><strong>Artikelnummer:</strong> <%= equipment.articlenumber %></p>
@@ -22,14 +23,49 @@
                 <p class="card-text"><strong>Benutzer-ID:</strong> <%= equipment.userid %></p>
 
                 <a href="/equipment" class="btn btn-secondary">Zurück zur Übersicht</a>
-                <a href="/equipment/<%= equipment.id %>/edit" class="btn btn-primary">Bearbeiten</a>
-
+                <!-- Bearbeiten Button -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#editForm" aria-expanded="false" aria-controls="editForm">
+                    Bearbeiten
+                </button>
+                
+                <!-- Löschen Formular -->
                 <form action="/equipment/<%= equipment.id %>?_method=DELETE" method="POST" style="display:inline;">
                     <button type="submit" class="btn btn-danger">Löschen</button>
                 </form>
             </div>
         </div>
+
+  <!-- Bearbeiten Formular -->
+<div class="collapse" id="editForm">
+    <div class="card card-body">
+        <h5>Artikel bearbeiten</h5>
+        <form action="/equipment/<%= equipment.id %>?_method=PUT" method="POST"> <!-- _method=PUT -->
+            <div class="form-group">
+                <label for="title">Titel</label>
+                <input type="text" id="title" name="title" class="form-control" value="<%= equipment.title %>" required>
+            </div>
+            <div class="form-group">
+                <label for="articlenumber">Artikelnummer</label>
+                <input type="text" id="articlenumber" name="articlenumber" class="form-control" value="<%= equipment.articlenumber %>" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Beschreibung</label>
+                <textarea id="description" name="description" class="form-control" rows="3" required><%= equipment.description %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="count">Verfügbar</label>
+                <input type="number" id="count" name="count" class="form-control" value="<%= equipment.count %>" required>
+            </div>
+            <div class="form-group">
+                <label for="userid">Benutzer-ID</label>
+                <input type="number" id="userid" name="userid" class="form-control" value="<%= equipment.userid %>" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Aktualisieren</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#editForm">Abbrechen</button>
+        </form>
     </div>
+</div>
+
 
     <%- include('../partials/_footer'); %>
 

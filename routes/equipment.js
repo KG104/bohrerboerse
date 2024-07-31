@@ -11,4 +11,5 @@ router.route('/:id')
     .put(equipmentController.updateEquipment)
     .delete(equipmentController.deleteEquipment);
 
+
 module.exports = router;
