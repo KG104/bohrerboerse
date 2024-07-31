@@ -80,23 +80,19 @@
                     <input type="text" id="userid" name="userid" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="articlenumber">Equipment ID</label>
-                    <input type="text" id="equipmentids" name="equipmentids" value="<%= equipment.id %>" class="form-control" required>
+                    <label for="equipmentid">Equipment ID</label>
+                    <input type="text" id="equipmentids" name="equipmentids[]" value="<%= equipment.id %>" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="description">Beschreibung</label>
-                    <textarea id="description" name="description" class="form-control" rows="3" required><%= equipment.description %></textarea>
+                    <label for="equipmentid">Ausleihdatum</label>
+                    <input type="text" id="start" name="start">
                 </div>
                 <div class="form-group">
-                    <label for="count">Verfügbar</label>
-                    <input type="number" id="count" name="count" class="form-control" value="<%= equipment.count %>" required>
-                </div>
-                <div class="form-group">
-                    <label for="userid">Benutzer-ID</label>
-                    <input type="number" id="userid" name="userid" class="form-control" value="<%= equipment.userid %>" required>
+                    <label for="equipmentid">Rückgabedatum</label>
+                    <input type="text" id="end" name="end">
                 </div>
                 <button type="submit" class="btn btn-primary">Ausleihen</button>
-                <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#editForm">Abbrechen</button>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#loanForm">Abbrechen</button>
             </form>
         </div>
     </div>
