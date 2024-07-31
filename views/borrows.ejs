@@ -30,7 +30,11 @@
                                     <%= borrow.end %>
                                 </span>
                             </p>
-                            <button class="btn btn-danger" onclick="returnBorrow('<%= borrow.id %>')">Rückgabe</button>
+                            <!-- Löschen Formular -->
+                            <form action="/borrows/<%= borrow.id %>?_method=DELETE" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger">Rückgabe</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -41,24 +45,5 @@
     <%- include('../partials/_footer'); %>
 
     <script src="/javascripts/bootstrap.min.js"></script>
-    <script>
-        function returnBorrow(id) {
-            console.log(`Rückgabe für Ausleihe mit ID: ${id}`); // Debugging-Log
-            fetch(`/borrows/${id}`, {
-                method: 'DELETE'
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Fehler beim Entfernen der Ausleihe');
-                }
-                // Bei erfolgreicher Rückgabe die Seite neu laden
-                window.location.reload();
-            })
-            .catch(error => {
-                console.error('Fehler beim Entfernen der Ausleihe:', error);
-                alert('Fehler beim Entfernen der Ausleihe.');
-            });
-        }
-    </script>
 </body>
 </html>

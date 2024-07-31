@@ -131,5 +131,5 @@ const getEditEquipment = async (req, res) => {
 
 
 module.exports = {
-    getAllEquipment, addEquipment, getEquipment, updateEquipment, deleteEquipment, renderEquipmentForm
+    getAllEquipment, addEquipment, getEquipment, updateEquipment, deleteEquipment, renderEquipmentForm, getEditEquipment
 };
