@@ -79,18 +79,5 @@
     <%- include('../partials/_footer'); %>
 
     <script src="/javascripts/bootstrap.min.js"></script>
-
-    <script>
-        function returnBorrow(id) {
-            console.log(`Rückgabe für Ausleihe mit ID: ${id}`); // Debugging-Log
-            fetch(`/borrows/${id}`, {
-                method: 'DELETE'
-            })
-            .then(response => {
-                window.location.reload();
-            });
-        }
-    </script>
-
 </body>
 </html>
