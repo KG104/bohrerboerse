@@ -49,7 +49,8 @@ Eine Errorseite ist vorhanden, um eine bessere Fehlerbehandlung zu gewährleiste
 
 2. Routen jeweils angepasst
 
-3. Ejs Templates
-    - Für jede Seite der Anwendung wurde ein EJS-Template erstellt
-    - Ejs Forms für alle Borrows
+3. Implementierung von asynchronen Request mit fetch, um auf Daten im Backend zuzugreifen
 
+4. Ejs Templates
+    - Für jede Seite der Anwendung wurde ein EJS-Template erstellt
+    - Ejs Forms als Schnittstelle zwischen Benutzeroberfläche und Backend (genutzt für borrows, user und equipment für delete, update und create)
