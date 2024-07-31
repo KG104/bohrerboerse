@@ -39,8 +39,6 @@ const addEquipment = async (req, res) => {
     }
 };
 
-
-
 const getEquipment = async (req, res) => {
     const { id } = req.params;
     try {

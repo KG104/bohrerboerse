@@ -7,6 +7,10 @@ router.route('/')
     .get(userController.getAllUsers)
     .post(userController.addUser);
 
+router.route('/newUser')
+    .get(userController.renderUserForm);
+
+
 router.route('/byName')
     .get(userController.filterByName);
 
