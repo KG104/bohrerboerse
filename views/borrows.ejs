@@ -48,15 +48,7 @@
                 method: 'DELETE'
             })
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Fehler beim Entfernen der Ausleihe');
-                }
-                // Bei erfolgreicher Rückgabe die Seite neu laden
                 window.location.reload();
-            })
-            .catch(error => {
-                console.error('Fehler beim Entfernen der Ausleihe:', error);
-                alert('Fehler beim Entfernen der Ausleihe.');
             });
         }
     </script>
