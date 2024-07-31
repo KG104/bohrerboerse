@@ -32,7 +32,8 @@
                 </button>
                 
                 <!-- Löschen Formular -->
-                <form action="/equipment/<%= equipment.id %>" method="DELETE" style="display:inline;">
+                <form action="/equipment/<%= equipment.id %>?_method=DELETE" method="POST" style="display:inline;">
+                    <input type="hidden" name="_method" value="DELETE">
                     <button type="submit" class="btn btn-danger">Löschen</button>
                 </form>
             </div>
@@ -43,6 +44,7 @@
             <div class="card card-body">
                 <h5>Artikel bearbeiten</h5>
                 <form action="/equipment/<%= equipment.id %>?_method=PUT" method="POST"> <!-- _method=PUT -->
+                    <input type="hidden" name="_method" value="PUT">
                     <div class="form-group">
                         <label for="title">Titel</label>
                         <input type="text" id="title" name="title" class="form-control" value="<%= equipment.title %>" required>
@@ -70,7 +72,7 @@
         </div>
     </div>
 
-    <!-- Bearbeiten Formular -->
+    <!-- Ausleihen Formular -->
     <div class="collapse" id="loanForm">
         <div class="card card-body">
             <h5>Artikel Ausleihen</h5>
