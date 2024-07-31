@@ -5,6 +5,7 @@ Leo Knittel, Valentin Spiroski und Konstantin Gerlach
  - borrowsController.js
  - borrows.ejs
  - newEquipment.ejs
+ - Doku
 
 
 ## Valentin Sprioski:
@@ -23,6 +24,7 @@ Leo Knittel, Valentin Spiroski und Konstantin Gerlach
 - newUser.ejs
 - index.ejs
 - error.ejs
+- Doku
 
 
 # Designentscheidung:
@@ -38,3 +40,16 @@ Diese Variable wird verwendet, um die aktuell aktive Seite in der Navbar Blau he
 
 Fehlerbehandlung:
 Eine Errorseite ist vorhanden, um eine bessere Fehlerbehandlung zu gewährleisten.
+
+# Entwicklung
+
+1. Erstellung der Controller
+    - Jeder Controller wurde mit spezifischen Routen verknüpft
+    - Es wurde eine grundlegende Fehlerbehandlung implementiert, um unerwartete Situationen abzufangen und benutzerfreundliche Fehlermeldungen zu liefern
+
+2. Routen jeweils angepasst
+
+3. Ejs Templates
+    - Für jede Seite der Anwendung wurde ein EJS-Template erstellt
+    - Ejs Forms für alle Borrows
+
