@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailansicht</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+</head>
+<body>
+    <%- include('../partials/_navbar', { activePage: 'equipment' }); %>
+
+    <div class="container mt-5">
+        <h1>Detailansicht des Artikels</h1>
+        
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><%= equipment.title %></h5>
+                <p class="card-text"><strong>Artikelnummer:</strong> <%= equipment.articlenumber %></p>
+                <p class="card-text"><strong>Beschreibung:</strong> <%= equipment.description %></p>
+                <p class="card-text"><strong>Verfügbar:</strong> <%= equipment.count %></p>
+                <p class="card-text"><strong>Benutzer-ID:</strong> <%= equipment.userid %></p>
+
+                <a href="/equipment" class="btn btn-secondary">Zurück zur Übersicht</a>
+                <a href="/equipment/<%= equipment.id %>/edit" class="btn btn-primary">Bearbeiten</a>
+
+                <form action="/equipment/<%= equipment.id %>?_method=DELETE" method="POST" style="display:inline;">
+                    <button type="submit" class="btn btn-danger">Löschen</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/_footer'); %>
+
+    <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

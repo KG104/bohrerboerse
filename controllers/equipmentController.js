@@ -42,7 +42,6 @@ const addEquipment = async (req, res) => {
 
 
 const getEquipment = async (req, res) => {
-    const { id } = req.params; // ID des angeforderten Equipments aus den Parametern abrufen
     try {
         const response = await fetch(`${BASE_URL}/${id}`);
         if (!response.ok) {
@@ -50,13 +49,13 @@ const getEquipment = async (req, res) => {
         }
         const equipmentItem = await response.json();
         
-        // Einzelansicht für das Equipment rendern
-        res.render('equipmentDetail', { equipment: equipmentItem });
+        // Detailansicht für das Equipment rendern und activePage setzen
     } catch (error) {
         console.error('Fehler beim Abrufen des Ausrüstungsgegenstands:', error.message);
         res.status(404).send('Ausrüstungsgegenstand nicht gefunden.');
     }
 };
+
 
 const updateEquipment = async (req, res) => {
     const { id } = req.params; // ID des zu aktualisierenden Equipments
@@ -104,6 +103,23 @@ const deleteEquipment = async (req, res) => {
     }
 
 };
+
+const getEditEquipment = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const response = await fetch(`${BASE_URL}/${id}`);
+        if (!response.ok) {
+            throw new Error('Ausrüstungsgegenstand nicht gefunden');
+        }
+        const equipmentItem = await response.json();
+        res.render('equipmentEdit', { equipment: equipmentItem, activePage: 'equipment' });
+    } catch (error) {
+        console.error('Fehler beim Abrufen des Ausrüstungsgegenstands:', error.message);
+        res.status(404).send('Ausrüstungsgegenstand nicht gefunden.');
+    }
+};
+
+
 
 module.exports = {
     getAllEquipment, addEquipment, getEquipment, updateEquipment, deleteEquipment
